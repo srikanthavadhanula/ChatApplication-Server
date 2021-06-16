@@ -8,7 +8,7 @@ const options = {
 }
 const io = require('socket.io')(httpServer, options);
 
-const PORT = 7000;
+const PORT = process.env.PORT || 7000;
 
 
 const users = {};
@@ -48,6 +48,6 @@ io.on('connection', (socket) => {
 
 });
 
-// app.get('/', (req, res) => {
-//     res.status(200).json({"name": "Srikanth"});
-// })
+app.get('/ChatServer', (req, res) => {
+    res.status(200).json({"App": "Working"});
+})
